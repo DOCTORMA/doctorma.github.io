@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="module-default">
+  <head> {% include head.html %} </head>
+  <body id="body" >
+
+    <div class="banner {% if page.bannerTransparent %}transparent{% endif %}">
+      <div class="container-fluid">
+        <nav class="pull-right">
+          <a class="glow no-decoration" href="/tags.html">标签</a>
+          <a class="glow no-decoration" href="/archive.html">归档</a>
+          <a class="glow no-decoration" href="/about.html">关于</a>
+        </nav>
+        <a class="logo no-decoration" href="/">
+          <i class="logo-h fa fa-h-square"></i> 
+          <span class="logo-arttle glow">arttle</span>
+          <span class="logo-land">Land</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="site-content"> {{ content }} </div>
+
+    <a href="#body" id="site-scroll-top" class="animate">
+      <span class="fa fa-chevron-up"></span>
+    </a>
+
+    {% include footer.html %}
+
+  </body>
+</html>
