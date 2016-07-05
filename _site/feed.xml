@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="https://doctorma.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://doctorma.github.io/" rel="alternate" type="text/html" /><updated>2016-07-05T21:44:01+08:00</updated><id>https://doctorma.github.io/</id><title>Doctorma Land</title><subtitle>前端开发</subtitle><author><name>Doctorma</name></author><entry><title>git远程操作</title><link href="https://doctorma.github.io/2016/07/05/git-Github.html" rel="alternate" type="text/html" title="git远程操作" /><published>2016-07-05T00:00:00+08:00</published><updated>2016-07-05T00:00:00+08:00</updated><id>https://doctorma.github.io/2016/07/05/git-Github</id><content type="html" xml:base="https://doctorma.github.io/2016/07/05/git-Github.html">&lt;p&gt;git是目前最流行的版本管理系统。&lt;/p&gt;
+
+&lt;p&gt;本文将详细介绍5个Git命令。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.beekka.com/blog/2014/bg2014061202.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;git-clone&quot;&gt;git clone&lt;/h1&gt;
+
+&lt;p&gt;从远程主机克隆一个版本库到本地&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone &amp;lt;版本库的网址&amp;gt; &amp;lt;本地目录名&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;支持多种协议，包括HTTP(s)、SSH、Git、本地文件协议等。&lt;/p&gt;
+
+&lt;h1 id=&quot;git-remote&quot;&gt;git remote&lt;/h1&gt;
+
+&lt;p&gt;用于管理主机名。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;git remote&lt;/strong&gt;：列出所有远程主机。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;git remote -v&lt;/strong&gt;：可以参看远程主机的网址。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;git remote add&lt;/strong&gt;：用于添加远程主机。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;git remote rm&lt;/strong&gt;：用于删除远程主机。&lt;/p&gt;
+
+&lt;h1 id=&quot;git-fetch&quot;&gt;git fetch&lt;/h1&gt;
+
+&lt;p&gt;将远程主机版本库的更新（commit）取回本地。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git fetch &amp;lt;远程主机名&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;git-pull&quot;&gt;git pull&lt;/h1&gt;
+
+&lt;p&gt;取回远程主机某个分支的更新，再与本地的指定分支合并。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git pull &amp;lt;远程主机名&amp;gt; &amp;lt;远程分支名&amp;gt;:&amp;lt;本地分支名&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;git-push&quot;&gt;git push&lt;/h1&gt;
+
+&lt;p&gt;用于将本地分支的更新，推送到远程主机。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git push &amp;lt;远程主机名&amp;gt; &amp;lt;本地分支名&amp;gt;:&amp;lt;远程分支名&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name>Doctorma</name></author><category term="git" /><category term="Github" /><summary>git是目前最流行的版本管理系统。
+
+本文将详细介绍5个Git命令。</summary></entry><entry><title>使用jekyll+Github Pages+markdown本地写博客</title><link href="https://doctorma.github.io/2016/07/04/jekyll-git-markdown.html" rel="alternate" type="text/html" title="使用jekyll+Github Pages+markdown本地写博客" /><published>2016-07-04T00:00:00+08:00</published><updated>2016-07-04T00:00:00+08:00</updated><id>https://doctorma.github.io/2016/07/04/jekyll-git-markdown</id><content type="html" xml:base="https://doctorma.github.io/2016/07/04/jekyll-git-markdown.html">&lt;p&gt;&lt;a href=&quot;http://jekyll.bootcss.com/&quot;&gt;jekyll&lt;/a&gt;是一个简单的免费的Blog生成工具，类似WordPress。但是和WordPress又有很大的不同，原因是jekyll只是一个生成静态网页的工具，不需要数据库支持。最关键的是jekyll可以免费部署在Github上，而且可以绑定自己的域名。
+本文介绍利用jekyll+Github Pages的方式部署环境。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;jekyll&quot;&gt;jekyll的安装&lt;/h1&gt;
+
+&lt;h2 id=&quot;ruby&quot;&gt;ruby安装&lt;/h2&gt;
+
+&lt;p&gt;1.下载对应的&lt;a href=&quot;http://rubyinstaller.org/downloads/&quot;&gt;Ruby安装包&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.安装&lt;/p&gt;
+
+&lt;p&gt;3.输入ruby -v 检测是否安装成功&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ruby -v
+ruby 2.3.0p0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2015-12-25 revision 53290&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;x64-mingw32]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;出现版本号说明安装成功。&lt;/p&gt;
+
+&lt;h2 id=&quot;devkit&quot;&gt;DevKit安装&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;DevKit 是一个在 Windows 上帮助简化安装及使用 Ruby C/C++ 扩展如 RDiscount 和 RedCloth 的工具箱。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;1.下载与Ruby版本对应的&lt;a href=&quot;http://rubyinstaller.org/downloads/&quot;&gt;DevKit安装包&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.解压缩&lt;/p&gt;
+
+&lt;p&gt;3.切换到DevKit的安装目录&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;D:\devkit&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;4.通过初始化来创建 config.yml 文件&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ruby dk.rb init
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;5.将ruby目录的绝对路径写在config.yml中&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Example:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# ---&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# - C:/ruby19trunk&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# - C:/ruby192dev&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+---
+- C:&lt;span class=&quot;se&quot;&gt;\R&lt;/span&gt;uby23-x64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;6.安装&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ruby dk.rb install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;jekyll-1&quot;&gt;jekyll安装&lt;/h2&gt;
+&lt;p&gt;1.确保 gem 已经正确安装&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;gem -v
+2.5.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;2.安装&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;3.检测是否安装成功&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;jekyll -v
+jekyll 3.1.6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;jekyll-2&quot;&gt;使用Jekyll创建博客&lt;/h1&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll new blog  &lt;span class=&quot;c&quot;&gt;#创建你的站点&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;blog      &lt;span class=&quot;c&quot;&gt;#进入blog目录&lt;/span&gt;
+jekyll serve     &lt;span class=&quot;c&quot;&gt;#启动http服务 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;本地服务开启后，Jekyll服务默认端口是4000，输入：&lt;a href=&quot;http://localhost:4000&quot;&gt;http://localhost:4000&lt;/a&gt;即可访问&lt;/p&gt;</content><author><name>Doctorma</name></author><category term="jekyll" /><category term="git" /><category term="markdown" /><summary>jekyll是一个简单的免费的Blog生成工具，类似WordPress。但是和WordPress又有很大的不同，原因是jekyll只是一个生成静态网页的工具，不需要数据库支持。最关键的是jekyll可以免费部署在Github上，而且可以绑定自己的域名。
+本文介绍利用jekyll+Github Pages的方式部署环境。</summary></entry></feed>

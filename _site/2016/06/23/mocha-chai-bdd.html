@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="module-default">
+  <head> 
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="jekyll,git">
+
+<meta name="google-site-verification" content="eLkhUhgjmoDvyZ3RB9Co10qQdgK2T0Jgc49Z90sjjRw" />
+
+<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>使用jekyll+Github Pages本地写博客 - Doctorma Land</title>
+<meta property="og:title" content="使用jekyll+Github Pages本地写博客" />
+<meta name="description" content="jekyll是一个简单的免费的Blog生成工具，类似WordPress。但是和WordPress又有很大的不同，原因是jekyll只是一个生成静态网页的工具，不需要数据库支持。最关键的是jekyll可以免费部署在Github上，而且可以绑定自己的域名。本文介绍利用jekyll+Github Pages的方式部署环境。" />
+<meta property="og:description" content="jekyll是一个简单的免费的Blog生成工具，类似WordPress。但是和WordPress又有很大的不同，原因是jekyll只是一个生成静态网页的工具，不需要数据库支持。最关键的是jekyll可以免费部署在Github上，而且可以绑定自己的域名。本文介绍利用jekyll+Github Pages的方式部署环境。" />
+<link rel="canonical" href="https://doctorma.github.io/2016/06/23/mocha-chai-bdd.html" />
+<meta property="og:url" content="https://doctorma.github.io/2016/06/23/mocha-chai-bdd.html" />
+<meta property="og:site_name" content="Doctorma Land" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-06-23T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@harttleharttle" />
+<meta name="twitter:creator" content="@Doctorma" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "使用jekyll+Github Pages本地写博客",
+    "datePublished": "2016-06-23T00:00:00+08:00",
+    "description": "jekyll是一个简单的免费的Blog生成工具，类似WordPress。但是和WordPress又有很大的不同，原因是jekyll只是一个生成静态网页的工具，不需要数据库支持。最关键的是jekyll可以免费部署在Github上，而且可以绑定自己的域名。本文介绍利用jekyll+Github Pages的方式部署环境。",
+    "logo": "https://doctorma.github.ioassets/img/favicon.png",
+    "url": "https://doctorma.github.io/2016/06/23/mocha-chai-bdd.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://doctorma.github.io/feed.xml" title="Doctorma Land" />
+
+<link rel="shortcut icon" href="/assets/img/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/img/apple-touch-icon-precomposed.png">
+<link rel="stylesheet" href="/assets/lib/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/lib/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" defer href="/assets/lib/lightbox/css/lightbox.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+
+<script src="/assets/lib/jquery/jquery-2.0.3.min.js"></script>
+
+ </head>
+  <body id="body" >
+
+    <div class="banner ">
+      <div class="container-fluid">
+        <nav class="pull-right">
+          <a class="glow no-decoration" href="/tags.html">标签</a>
+          <a class="glow no-decoration" href="/archive.html">归档</a>
+          <a class="glow no-decoration" href="/about.html">关于</a>
+        </nav>
+        <a class="logo no-decoration" href="/">
+          <i class="logo-h fa fa-h-square"></i> 
+          <span class="logo-arttle glow">octorma</span>
+          <span class="logo-land">Land</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="site-content"> <div class="module-blog">
+  <header class="blog-header">
+    <div class="container-fluid">
+      <time class="pull-right">
+        
+        Thursday, June 
+        23rd
+          , 
+        2016
+      </time>
+      <h3>使用jekyll+Github Pages本地写博客
+        
+      </h3>
+
+      <aside> <div class="toc"></div> </aside>
+
+      <p class="tag-list">
+        
+          <a class="tag" href="/tags.html#jekyll">jekyll</a>
+        
+          <a class="tag" href="/tags.html#git">git</a>
+        
+      </p>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+    <div class="content">
+      <article class="md">
+        <p><a href="http://jekyll.bootcss.com/">jekyll</a>是一个简单的免费的Blog生成工具，类似WordPress。但是和WordPress又有很大的不同，原因是jekyll只是一个生成静态网页的工具，不需要数据库支持。最关键的是jekyll可以免费部署在Github上，而且可以绑定自己的域名。
+本文介绍利用jekyll+Github Pages的方式部署环境。</p>
+
+<!--more-->
+
+<h1 id="jekyll">jekyll的安装</h1>
+
+<h2 id="ruby">ruby安装</h2>
+
+<p>1.下载对应的<a href="http://rubyinstaller.org/downloads/">Ruby安装包</a></p>
+
+<p>2.安装</p>
+
+<p>3.输入ruby -v 检测是否安装成功</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ruby -v
+ruby 2.3.0p0 <span class="o">(</span>2015-12-25 revision 53290<span class="o">)</span> <span class="o">[</span>x64-mingw32]
+</code></pre>
+</div>
+<p>出现版本号说明安装成功。</p>
+
+<h2 id="devkit">DevKit安装</h2>
+<blockquote>
+  <p>DevKit 是一个在 Windows 上帮助简化安装及使用 Ruby C/C++ 扩展如 RDiscount 和 RedCloth 的工具箱。</p>
+</blockquote>
+
+<p>1.下载与Ruby版本对应的<a href="http://rubyinstaller.org/downloads/">DevKit安装包</a></p>
+
+<p>2.解压缩</p>
+
+<p>3.切换到DevKit的安装目录</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd</span> <span class="s1">'D:\devkit'</span>
+</code></pre>
+</div>
+
+<p>4.通过初始化来创建 config.yml 文件</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ruby dk.rb init
+</code></pre>
+</div>
+
+<p>5.将ruby目录的绝对路径写在config.yml中</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># Example:</span>
+<span class="c">#</span>
+<span class="c"># ---</span>
+<span class="c"># - C:/ruby19trunk</span>
+<span class="c"># - C:/ruby192dev</span>
+<span class="c">#</span>
+---
+- C:<span class="se">\R</span>uby23-x64
+</code></pre>
+</div>
+
+<p>6.安装</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ruby dk.rb install
+</code></pre>
+</div>
+
+<h2 id="jekyll-1">jekyll安装</h2>
+<p>1.确保 gem 已经正确安装</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gem -v
+2.5.1
+</code></pre>
+</div>
+
+<p>2.安装</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>gem install jekyll
+</code></pre>
+</div>
+
+<p>3.检测是否安装成功</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>jekyll -v
+jekyll 3.1.6
+</code></pre>
+</div>
+
+<h1 id="jekyll-2">使用Jekyll创建博客</h1>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>jekyll new blog  <span class="c">#创建你的站点</span>
+<span class="nb">cd </span>blog      <span class="c">#进入blog目录</span>
+jekyll serve     <span class="c">#启动http服务 </span>
+</code></pre>
+</div>
+<p>本地服务开启后，Jekyll服务默认端口是4000，输入：<a href="http://localhost:4000">http://localhost:4000</a>即可访问</p>
+
+
+      </article>
+
+      <div class="author-wrapper">
+        <section class="module-author">
+  <img src="/assets/img/avatar.jpg">
+  <header>Harttle</header>
+  <p>前端开发</p>
+</section>
+
+      </div>
+      <div class="post-pager clearfix">
+  
+  
+    <a href="/2016/06/27/shopify-liquid.html" class="next btn-hover">
+      下一篇：Liquid 是世界上最好的模板引擎
+    </a>
+  
+
+  
+
+  
+    <div id="social-share-block" class="text-left"></div>
+  
+
+  
+
+</div>
+
+
+      <!-- <div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'harttleland'; 
+  $(function () {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  });
+</script>
+<noscript>请 <a href="http://disqus.com/?ref_noscript">启用 JavaScript</a> 来查看评论 </noscript>
+ -->
+    </div>
+  </div>
+
+  <script type="text/x-mathjax-config">  
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$', '$'] ],
+            displayMath: [ ['$$', '$$'], ['$$$', '$$$']],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+    MathJax.Hub.Queue(function () {
+        $('body').scrollspy('refresh'); 
+    });
+</script>
+
+<script type="text/async-script" data-src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+
+</div>
+
+ </div>
+
+    <a href="#body" id="site-scroll-top" class="animate">
+      <span class="fa fa-chevron-up"></span>
+    </a>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/libs/html5shiv/3.6.2/html5shiv.js"></script>
+<script src="//v3.bootcss.com/docs-assets/js/respond.min.js"></script>
+<![endif]-->
+
+<script src="/assets/lib/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/async-script" data-src="/assets/lib/lightbox/js/lightbox.min.js"></script>
+<script src="/assets/js/site.js"></script>
+
+<script>
+  var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "//hm.baidu.com/hm.js?d6a11a278b8e06d897d247e0402b0f35"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })();
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-65795020-1', 'auto'); ga('send', 'pageview');
+</script>
+
+<script>
+(function(){ var bp = document.createElement('script'); var curProtocol = window.location.protocol.split(':')[0]; if (curProtocol === 'https') { bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        } else { bp.src = 'http://push.zhanzhang.baidu.com/push.js'; } var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(bp, s); })();
+</script>
+
+
+  </body>
+</html>

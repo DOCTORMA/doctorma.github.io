@@ -1,7 +1,7 @@
-title: Harttle Land
-description: 致力于简单的、一致的、高效的前端开发
-url: http://harttle.com
-author: Harttle
+﻿title: Doctorma Land
+description: 前端开发
+url: https://doctorma.github.io
+author: Doctorma
 twitter:
   username: harttleharttle
 logo: assets/img/favicon.png
@@ -10,10 +10,6 @@ keywords:
   - HTML
   - CSS
   - JavaScript
-  - C++
-  - Linux
-  - Bash
-  - Vim
 
 permalink: /:year/:month/:day/:title.html
 paginate: 7
