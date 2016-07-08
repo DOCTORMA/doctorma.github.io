@@ -31,11 +31,11 @@ window.modules.index = function() {
         $('.tag-list').append(tagEls);
     });
     var links = {
-        facebook: 'https://www.facebook.com/harttle',
-        github: 'https://github.com/harttle',
-        weibo: 'http://weibo.com/harttle',
-        linkedin: 'https://linkedin.com/in/harttle',
-        rss: 'http://harttle.com/feed.xml'
+        github: 'https://github.com/DOCTORMA',
+        facebook: '',
+        weibo: '',
+        linkedin: '',
+        rss: ''
     };
     $('.follow').socialShare({ links: links, size: 'sm'});
 };

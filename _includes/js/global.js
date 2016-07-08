@@ -60,7 +60,7 @@ $(function() {
         .replaceWith(function(){
             var html = this.textContent;
             html = html.replace(/harttle/ig, 
-                "<a href='http://harttle.com'>Harttle</a>");
+                "<a href='https://doctorma.github.io'>Doctorma</a>");
             return $('<span>').html(html);
         });
 

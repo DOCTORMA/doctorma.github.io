@@ -69,13 +69,13 @@ div.jqcloud span.w6 {
   color: #BA5A5D; }
 
 div.jqcloud span.w5 {
-  color: #5ABA59; }
+  color: #A6B572; }
 
 div.jqcloud span.w4 {
-  color: #5ABA59; }
+  color: #A6B572; }
 
 div.jqcloud span.w3 {
-  color: #5ABA59; }
+  color: #A6B572; }
 
 div.jqcloud span.w2 {
   color: #4D85D1; }
@@ -704,13 +704,13 @@ a, a:hover, a:active, a:focus {
     padding: 0 30px;
     margin: 0 auto; } }
 .tag {
-  color: #5ABA59;
+  color: #A6B572;
   line-height: 1;
   margin: 0 0.2em 0.2em;
   padding: 0.3em 0.6em;
   font-size: 12px;
   background: white;
-  border: 1px solid #5ABA59;
+  border: 1px solid #A6B572;
   display: inline-block;
   position: relative;
   -webkit-transform: translateZ(0);
@@ -733,7 +733,7 @@ a, a:hover, a:active, a:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #5ABA59;
+  background: #A6B572;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 0 50%;
@@ -864,7 +864,7 @@ a, a:hover, a:active, a:focus {
       vertical-align: bottom;
       font-size: 24px; }
     .module-default .banner .logo .logo-h {
-      color: #5ABA59;
+      color: #A6B572;
       font-size: 32px; }
     .module-default .banner .logo .logo-land {
       color: white;
@@ -1109,7 +1109,7 @@ a, a:hover, a:active, a:focus {
     .module-tags .left-panel #tags-display-toggle:hover {
       opacity: 1; }
     .module-tags .left-panel #tags-display-toggle:hover, .module-tags .left-panel #tags-display-toggle:active {
-      color: #5ABA59; }
+      color: #A6B572; }
     .module-tags .left-panel #tags-display-toggle:hover, .module-tags .left-panel #tags-display-toggle:active, .module-tags .left-panel #tags-display-toggle:focus {
       text-decoration: none; }
     @media (min-width: 1200px) {
@@ -1246,7 +1246,7 @@ a, a:hover, a:active, a:focus {
       .module-blog .blog-header .container-fluid aside .toc .nav > .active > a {
         color: #415877;
         text-decoration: none;
-        border-left: 1px solid #5ABA59; }
+        border-left: 1px solid #A6B572; }
       .module-blog .blog-header .container-fluid aside .toc .nav > .active > ul {
         display: block; }
       .module-blog .blog-header .container-fluid aside .toc .nav > li > a {
