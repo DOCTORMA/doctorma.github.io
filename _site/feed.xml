@@ -1,4 +1,692 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="https://doctorma.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://doctorma.github.io/" rel="alternate" type="text/html" /><updated>2016-07-08T22:16:49+08:00</updated><id>https://doctorma.github.io/</id><title>Doctorma Land</title><subtitle>前端开发</subtitle><author><name>Doctorma</name></author><entry><title>git远程操作</title><link href="https://doctorma.github.io/2016/07/05/git-Github.html" rel="alternate" type="text/html" title="git远程操作" /><published>2016-07-05T00:00:00+08:00</published><updated>2016-07-05T00:00:00+08:00</updated><id>https://doctorma.github.io/2016/07/05/git-Github</id><content type="html" xml:base="https://doctorma.github.io/2016/07/05/git-Github.html">&lt;p&gt;git是目前最流行的版本管理系统。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="https://doctorma.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://doctorma.github.io/" rel="alternate" type="text/html" /><updated>2016-08-16T15:05:47+08:00</updated><id>https://doctorma.github.io/</id><title>Doctorma Land</title><subtitle>前端开发</subtitle><author><name>Doctorma</name></author><entry><title>CSS3 Flexbox布局</title><link href="https://doctorma.github.io/2016/08/14/flex.html" rel="alternate" type="text/html" title="CSS3 Flexbox布局" /><published>2016-08-14T00:00:00+08:00</published><updated>2016-08-14T00:00:00+08:00</updated><id>https://doctorma.github.io/2016/08/14/flex</id><content type="html" xml:base="https://doctorma.github.io/2016/08/14/flex.html">&lt;p&gt;CSS3 弹性框(Flexible Box 或 Flexbox)，是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当排布行为的布局方式。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;flexbox&quot;&gt;Flexbox模型&lt;/h1&gt;
+
+&lt;p&gt;flex布局模型不同于块和内联模型布局，块和内联模型的布局计算依赖于块和内联的流方向，而flex布局依赖于flex directions.简单的说：Flexbox是布局模块，而不是一个简单的属性，它包含父元素(flex container)和子元素(flex items)的属性。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/css/flexbox.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;flex-container&quot;&gt;弹性容器(Flex container)&lt;/h3&gt;
+
+&lt;p&gt;包含着弹性项目的父元素。通过设置 display 属性的值为 flex (使弹性容器成为块级元素)或 inline-flex (使弹性容器成为行内级元素)来定义弹性容器。&lt;/p&gt;
+
+&lt;h3 id=&quot;flex-item&quot;&gt;弹性项目(Flex item)&lt;/h3&gt;
+
+&lt;p&gt;弹性容器的每个子元素都成为弹性项目。弹性容器直接包含的文本将包覆成匿名弹性项目。&lt;/p&gt;
+
+&lt;h3 id=&quot;axis&quot;&gt;轴(Axis)&lt;/h3&gt;
+
+&lt;p&gt;每个弹性框布局包含两个轴。弹性项目沿其依次排列的那根轴称为主轴(main axis)。垂直于主轴的那根轴称为侧轴(cross axis)。&lt;/p&gt;
+
+&lt;p&gt;1.flex-direction 属性确立主轴。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  flex-direction: row | row-reverse | column | column-reverse;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;2.justify-content 属性定义了在当前行上弹性项目沿主轴如何排布。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;3.align-items 属性定义了在当前行上弹性项目沿侧轴默认如何排布。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  align-items: flex-start | flex-end | center | baseline | stretch;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;4.align-self 属性定义了单个弹性项目在侧轴上应当如何对齐，这个定义覆盖由 align-items 所确立的默认值。&lt;/p&gt;
+
+&lt;h3 id=&quot;direction&quot;&gt;方位(Direction)&lt;/h3&gt;
+
+&lt;p&gt;弹性容器的各个边（主轴起点(main start)/主轴终点(main end)和侧轴起点(cross start)/侧轴终点(cross end)）描述了弹性条目流的起点与终点。它们具体取决于弹性容器的主轴与侧轴以及由 writing-mode 确立的方向（从左到右、从右到左，等等）。&lt;/p&gt;
+
+&lt;p&gt;1.order 属性将元素与序号组关联起来，并决定哪些元素先出现。&lt;/p&gt;
+
+&lt;p&gt;2.flex-flow 属性是 flex-direction 和 flex-wrap 属性的简写，决定弹性项目如何排布。&lt;/p&gt;
+
+&lt;h3 id=&quot;line&quot;&gt;行(Line)&lt;/h3&gt;
+
+&lt;p&gt;根据 flex-wrap 属性，弹性项目可以排布在单个行或者多个行中。此属性控制侧轴的方向和新行排列的方向。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  flex-wrap: nowrap | wrap | wrap-reverse;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;它可能取三个值。&lt;/p&gt;
+
+&lt;p&gt;（1）nowrap（默认）：不换行。&lt;/p&gt;
+
+&lt;p&gt;（2）wrap：换行，第一行在上方。&lt;/p&gt;
+
+&lt;p&gt;（3）wrap-reverse：换行，第一行在下方。&lt;/p&gt;
+
+&lt;h3 id=&quot;dimension&quot;&gt;尺寸(Dimension)&lt;/h3&gt;
+
+&lt;p&gt;根据弹性容器的主轴与侧轴，弹性项目的宽和高相应称为主轴尺寸(main size) 与 侧轴尺寸(cross size)。&lt;/p&gt;
+
+&lt;p&gt;1.min-height 与 min-width 属性初始值为 0。&lt;/p&gt;
+
+&lt;p&gt;2.flex 属性是 flex-grow、flex-shrink 和 flex-basis 属性的简写，确立弹性项目的伸缩性。&lt;/p&gt;
+
+&lt;p&gt;参考文章：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html&quot;&gt;Flex 布局教程：语法篇&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2015/07/flex-examples.html&quot;&gt;Flex 布局教程：实例篇&lt;/a&gt;&lt;/p&gt;</content><author><name>Doctorma</name></author><category term="css3" /><category term="flex" /><summary>CSS3 弹性框(Flexible Box 或 Flexbox)，是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当排布行为的布局方式。</summary></entry><entry><title>CSS3 Transition, Transform和Animation区别和使用</title><link href="https://doctorma.github.io/2016/08/10/transition-transform-animation.html" rel="alternate" type="text/html" title="CSS3 Transition, Transform和Animation区别和使用" /><published>2016-08-10T00:00:00+08:00</published><updated>2016-08-10T00:00:00+08:00</updated><id>https://doctorma.github.io/2016/08/10/transition-transform-animation</id><content type="html" xml:base="https://doctorma.github.io/2016/08/10/transition-transform-animation.html">&lt;p&gt;CSS3动画相关的几个属性是：transition, transform, animation。分别为过渡，变换，动画。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;transition&quot;&gt;transition&lt;/h1&gt;
+
+&lt;p&gt;其作用是：在一定的时间内平滑的改变CSS的值。无论是点击事件，焦点事件，还是鼠标hover，只要值改变了，就是平滑的，就是动画。&lt;/p&gt;
+
+&lt;p&gt;transition有下面些具体属性：&lt;/p&gt;
+
+&lt;p&gt;transition-property :* //指定过渡的属性&lt;/p&gt;
+
+&lt;p&gt;transition-duration:*//指定这个过渡的持续时间&lt;/p&gt;
+
+&lt;p&gt;transition-timing-function:*//指定过渡类型&lt;/p&gt;
+
+&lt;p&gt;transition-delay:* //延迟过渡时间&lt;/p&gt;
+
+&lt;h3 id=&quot;transition-property&quot;&gt;transition-property&lt;/h3&gt;
+
+&lt;p&gt;语法：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;transition-property ： none | all | &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &amp;lt;IDENT&amp;gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;,&#39;&lt;/span&gt; &amp;lt;IDENT&amp;gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;transition-property是用来指定当元素其中一个属性改变时执行transition效果，其主要有以下几个值：none(没有属性改变)；all（所有属性改变）这个也是其默认值；ident（元素属性名）。当其值为none时，transition马上停止执行，当指定为all时，则元素产生任何属性值变化时都将执行transition效果，ident是可以指定元素的某一个属性值。&lt;/p&gt;
+
+&lt;h3 id=&quot;transition-duration&quot;&gt;transition-duration&lt;/h3&gt;
+
+&lt;p&gt;语法：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;transition-duration ： &amp;lt;&lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;, &amp;lt;&lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;&amp;gt;]&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;transition-duration是用来指定元素转换过程的持续时间，取值：&lt;time&gt;为数值，单位为s（秒）或者ms(毫秒),可以作用于所有元素，包括::before和::after伪元素。其默认值是0，也就是变换时是即时的。&lt;/time&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;transition-timing-function&quot;&gt;transition-timing-function&lt;/h3&gt;
+
+&lt;p&gt;语法：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;transition-timing-function ： ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&amp;lt;number&amp;gt;, &amp;lt;number&amp;gt;, &amp;lt;number&amp;gt;, &amp;lt;number&amp;gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;, ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&amp;lt;number&amp;gt;, &amp;lt;number&amp;gt;, &amp;lt;number&amp;gt;, &amp;lt;number&amp;gt;&lt;span class=&quot;o&quot;&gt;)]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;transition-timing-function有6个可能值：&lt;/p&gt;
+
+&lt;p&gt;1、ease：（逐渐变慢）默认值，ease函数等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0).&lt;/p&gt;
+
+&lt;p&gt;2、linear：（匀速），linear 函数等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0).&lt;/p&gt;
+
+&lt;p&gt;3、ease-in：(加速)，ease-in 函数等同于贝塞尔曲线(0.42, 0, 1.0, 1.0).&lt;/p&gt;
+
+&lt;p&gt;4、ease-out：（减速），ease-out 函数等同于贝塞尔曲线(0, 0, 0.58, 1.0).&lt;/p&gt;
+
+&lt;p&gt;5、ease-in-out：（加速然后减速），ease-in-out 函数等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)&lt;/p&gt;
+
+&lt;p&gt;6、cubic-bezier：（该值允许你去自定义一个时间曲线）， 特定的cubic-bezier曲线。 (x1, y1, x2, y2)四个值特定于曲线上点P1和点P2。所有值需在[0, 1]区域内，否则无效。&lt;/p&gt;
+
+&lt;h3 id=&quot;transition-delay&quot;&gt;transition-delay&lt;/h3&gt;
+
+&lt;p&gt;语法：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;transition-delay ： &amp;lt;&lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;, &amp;lt;&lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;&amp;gt;]&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;transition-delay是用来指定一个动画开始执行的时间，也就是说当改变元素属性值后多长时间开始执行transition效果，其取值：&lt;time&gt;为数值，单位为s（秒）或者ms(毫秒)，也可以作用于所有元素，包括:before和:after伪元素。 默认大小是&quot;0&quot;，也就是变换立即执行，没有延迟。&lt;/time&gt;&lt;/p&gt;
+
+&lt;p&gt;综合上述我们可以给transition一个速记法：transition: &lt;property&gt; &lt;duration&gt; &lt;animation type=&quot;&quot;&gt; &lt;delay&gt;.&lt;/delay&gt;&lt;/animation&gt;&lt;/duration&gt;&lt;/property&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;transform&quot;&gt;transform&lt;/h1&gt;
+
+&lt;p&gt;transform指变换，主要包括以下几种：旋转rotate、扭曲skew、缩放scale和移动translate以及矩阵变形matrix。&lt;/p&gt;
+
+&lt;p&gt;语法：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;transform ： none | &amp;lt;transform-function&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &amp;lt;transform-function&amp;gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; 
+也就是：
+transform :  rotate | scale | skew | translate |matrix;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;none:表示不进行变换；&lt;transform-function&gt;表示一个或多个变换函数，以空格分开。&lt;/transform-function&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;rotate&quot;&gt;旋转rotate&lt;/h3&gt;
+
+&lt;p&gt;rotate(&lt;angle&gt;) ：通过指定的角度参数对原元素指定一个2D rotation（2D 旋转），需先有transform-origin属性的定义。transform-origin定义的是旋转的基点，其中angle是指旋转角度，如果设置的值为正数表示顺时针旋转，如果设置的值为负数，则表示逆时针旋转。如：transform:rotate(30deg)。&lt;/angle&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;translate&quot;&gt;移动translate&lt;/h3&gt;
+
+&lt;p&gt;移动translate我们分为三种情况：translate(x,y)水平方向和垂直方向同时移动（也就是X轴和Y轴同时移动）；translateX(x)仅水平方向移动（X轴移动）；translateY(Y)仅垂直方向移动（Y轴移动）。其基点默认为元素中心点，也可以根据transform-origin进行改变基点。&lt;/p&gt;
+
+&lt;h3 id=&quot;scale&quot;&gt;缩放scale&lt;/h3&gt;
+
+&lt;p&gt;缩放scale和移动translate是极其相似，也具有三种情况：scale(x,y)使元素水平方向和垂直方向同时缩放（也就是X轴和Y轴同时缩放）；scaleX(x)元素仅水平方向缩放（X轴缩放）；scaleY(y)元素仅垂直方向缩放（Y轴缩放），但它们具有相同的缩放中心点和基数，其中心点就是元素的中心位置，缩放基数为1，如果其值大于1元素就放大，反之其值小于1，元素缩小。&lt;/p&gt;
+
+&lt;h3 id=&quot;skew&quot;&gt;扭曲skew&lt;/h3&gt;
+
+&lt;p&gt;扭曲skew和translate、scale一样同样具有三种情况：skew(x,y)使元素在水平和垂直方向同时扭曲（X轴和Y轴同时按一定的角度值进行扭曲变形）；skewX(x)仅使元素在水平方向扭曲变形（X轴扭曲变形）；skewY(y)仅使元素在垂直方向扭曲变形（Y轴扭曲变形）。&lt;/p&gt;
+
+&lt;h3 id=&quot;matrix&quot;&gt;矩阵matrix&lt;/h3&gt;
+
+&lt;p&gt;matrix(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;number&gt;) ： 以一个含六值的(a,b,c,d,e,f)变换矩阵的形式指定一个2D变换，相当于直接应用一个[a b c d e f]变换矩阵。就是基于水平方向（X轴）和垂直方向（Y轴）重新定位元素。&lt;/number&gt;&lt;/number&gt;&lt;/number&gt;&lt;/number&gt;&lt;/number&gt;&lt;/number&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;animation&quot;&gt;animation&lt;/h1&gt;
+
+&lt;p&gt;Animation，也就是动画。但CSS3中的Animation与HTML5中的Canvas绘制动画又不同，Animation只应用在页面上已存在的DOM元素上。&lt;/p&gt;
+
+&lt;h3 id=&quot;keyframes&quot;&gt;Keyframes&lt;/h3&gt;
+
+&lt;p&gt;关键帧，前面在使用transition制作一个简单的transition效果时，我们包括了初始属性和最终属性，一个开始执行动作时间和一个延续动作时间以及动作的变换速率，其实这些值都是一个中间值，如果我们要控制的更细一些，比如说我要第一个时间段执行什么动作，第二个时间段执行什么动作（换到flash中说，就是第一帧我要执行什么动作，第二帧我要执行什么动作），这样我们用Transition就很难实现了，此时我们也需要这样的一个“关键帧”来控制。那么CSS3的Animation就是由“keyframes”这个属性来实现这样的效果。&lt;/p&gt;
+
+&lt;p&gt;语法：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;keyframes-rule: &lt;span class=&quot;s1&quot;&gt;&#39;@keyframes&#39;&lt;/span&gt; IDENT &lt;span class=&quot;s1&quot;&gt;&#39;{&#39;&lt;/span&gt; keyframes-blocks &lt;span class=&quot;s1&quot;&gt;&#39;}&#39;&lt;/span&gt;;
+keyframes-blocks: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; keyframe-selectors block &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; ;
+keyframe-selectors: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;from&#39;&lt;/span&gt; | &lt;span class=&quot;s1&quot;&gt;&#39;to&#39;&lt;/span&gt; | PERCENTAGE &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;,&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;from&#39;&lt;/span&gt; | &lt;span class=&quot;s1&quot;&gt;&#39;to&#39;&lt;/span&gt; | PERCENTAGE &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Keyframes具有其自己的语法规则，他的命名是由”@keyframes”开头，后面紧接着是这个“动画的名称IDENT”加上一对花括号“{}”，括号中就是一些不同时间段样式规则，有点像我们css的样式写法一样。对于一个”@keyframes”中的样式规则是由多个百分比构成的，如“0%”到”100%”之间，我们可以在这个规则中创建多个百分比，我们分别给每一个百分比中给需要有动画效果的元素加上不同的属性，从而让元素达到一种在不断变化的效果，比如说移动，改变元素颜色，位置，大小，形状等，不过有一点需要注意的是，我们可以使用“from”“to”来代表一个动画是从哪开始，到哪结束，也就是说这个 “from”就相当于”0%”而”to”相当于”100%”,值得一说的是，其中”0%”不能像别的属性取值一样把百分比符号省略，我们在这里必须加上百分符号（“%”）如果没有加上的话，我们这个keyframes是无效的，不起任何作用。因为keyframes的单位只接受百分比值。综上：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@keyframes IDENT &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+ from &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   Properties:Properties value;
+ &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+ Percentage &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   Properties:Properties value;
+ &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+ to &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   Properties:Properties value;
+ &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+或者全部写成百分比的形式：
+@keyframes IDENT &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  0% &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+     Properties:Properties value;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  Percentage &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+     Properties:Properties value;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  100% &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+     Properties:Properties value;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;animation-1&quot;&gt;元素怎么调用animation属性&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.demo1 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+ width: 50px;
+ height: 50px;
+ margin-left: 100px;
+ background: blue;
+ -webkit-animation-name:&lt;span class=&quot;s1&quot;&gt;&#39;wobble&#39;&lt;/span&gt;;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;动画属性名，也就是我们前面keyframes定义的动画名&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/
+ -webkit-animation-duration: 10s;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;动画持续时间&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/
+ -webkit-animation-timing-function: ease-in-out; /&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;动画频率，和transition-timing-function是一样的&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/
+ -webkit-animation-delay: 2s;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;动画延迟时间&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/
+ -webkit-animation-iteration-count: 10;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;定义循环次数，默认为1，infinite为无限次&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/
+ -webkit-animation-direction: alternate;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;定义动画播放的方式，其只有两个值，默认值为normal，如果设置为normal时，动画的每次循环都是向前播放；另一个值是alternate，他的作用是，动画播放在第偶数次向前播放，第奇数次向反方向播放。&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;综合上面的内容可以给animation属性一个速记法：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;animation:[&amp;lt;animation-name&amp;gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &amp;lt;animation-duration&amp;gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &amp;lt;animation-timing-function&amp;gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &amp;lt;animation-delay&amp;gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &amp;lt;animation-iteration-count&amp;gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &amp;lt;animation-direction&amp;gt;] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;, &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&amp;lt;animation-name&amp;gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &amp;lt;animation-duration&amp;gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &amp;lt;animation-timing-function&amp;gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &amp;lt;animation-delay&amp;gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &amp;lt;animation-iteration-count&amp;gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &amp;lt;animation-direction&amp;gt;] &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;参考文章：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.w3cplus.com/content/css3-transition&quot;&gt;transition&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.w3cplus.com/content/css3-transform&quot;&gt;transform&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.w3cplus.com/content/css3-animation&quot;&gt;animation&lt;/a&gt;&lt;/p&gt;</content><author><name>Doctorma</name></author><category term="css3" /><category term="transition" /><category term="transform" /><category term="animation" /><summary>CSS3动画相关的几个属性是：transition, transform, animation。分别为过渡，变换，动画。</summary></entry><entry><title>css的三角形运用</title><link href="https://doctorma.github.io/2016/08/08/css-triangle.html" rel="alternate" type="text/html" title="css的三角形运用" /><published>2016-08-08T00:00:00+08:00</published><updated>2016-08-08T00:00:00+08:00</updated><id>https://doctorma.github.io/2016/08/08/css-triangle</id><content type="html" xml:base="https://doctorma.github.io/2016/08/08/css-triangle.html">&lt;p&gt;利用css完成一些三角形的页面元素的制作。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;css&quot;&gt;css如何实现三角形&lt;/h1&gt;
+
+&lt;p&gt;通过边框，也就是border属性。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;长方形边框&lt;/h3&gt;
+
+&lt;p&gt;HTML的块级元素都是长方形的，比如我们设定了以下样式：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.simple-rectangle &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    margin: 50px auto;
+    width: 200px;
+    height: 200px;
+    border: 40px solid salmon;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&amp;lt;div &lt;span class=&quot;nv&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;simple-rectangle&quot;&lt;/span&gt;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这只是一个简单的长方形，这个长方形在画面中是这样显示的：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/css/simple-retangle.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;给这个长方形来个彩色边框:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.simple-rectangle&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	width: 120px;
+	height: 120px;
+	margin: 50px auto;
+	border-top: 40px solid coral;
+	border-right: 40px solid lightblue;
+	border-bottom: 40px solid lightgreen;
+	border-left: 40px solid mediumpurple;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;		
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;结果如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/css/simple-retangle-color.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看到，每个边框都变成一个梯形了。&lt;/p&gt;
+
+&lt;p&gt;注意长方形的4个角，以左上角为例，它到底是属于左边框还是上边框呢？
+左上角，既属于左边框，又属于上边框，角落的归属成了一个问题，浏览器为了不让边框打架，就让二位各分一半吧。&lt;/p&gt;
+
+&lt;p&gt;于是乎左上角就被一分为二，变成了两个三角形，三角形靠近哪个边框，就显示那个边框的颜色。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;三角形的实现&lt;/h3&gt;
+
+&lt;p&gt;把上面这个彩色边框的矩形内容拿掉：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.empty-rectangle&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	width: 0;
+	margin: 50px auto;
+	border-top: 40px solid coral;
+	border-right: 40px solid lightblue;
+	border-bottom: 40px solid lightgreen;
+	border-left: 40px solid mediumpurple;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;	
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;现在上下左右4个边框都是三角形了：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/css/empty-retangle.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;假设我们不要4个三角形，也不要让它们凑一块，我们就只要1个三角形，该如何做呢？&lt;/p&gt;
+
+&lt;p&gt;将其他3个边框的颜色设为透明色：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.triangle-top,.triangle-right,.triangle-bottom,.triangle-left&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	width: 0;
+	margin: 50px auto;
+	border: 40px solid transparent;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+.triangle-top&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	border-top-color: coral;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+.triangle-right&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	border-right-color: lightblue;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+.triangle-bottom&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	border-bottom-color: lightgreen;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+.triangle-left&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	border-left-color: mediumpurple;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/css/single-triangle.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;三角形应用&lt;/h1&gt;
+
+&lt;p&gt;应用上面的原理实现如下四个图标：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/css/tubiao.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;旗帜&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/css/flag.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;旗帜图案是下半部分被啃掉了一口的长方形，这一口是个三角形。&lt;/p&gt;
+
+&lt;p&gt;实现方法，是将border-bottom的颜色设置为透明（transparent）的。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.flag&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	margin: 50px auto;
+	width: 0;
+	border: 20px solid &lt;span class=&quot;c&quot;&gt;#FF6600;&lt;/span&gt;
+	border-top-width: 40px;
+	border-bottom: 10px solid transparent;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&amp;lt;div &lt;span class=&quot;nv&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;flag&quot;&lt;/span&gt;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;向右的双实心箭头&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/css/arrow.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;双实心箭头则是由两个三角形组成的。&lt;/p&gt;
+
+&lt;p&gt;我们可以只提供一个元素实现第1个三角形，然后借助CSS3的伪类实现第2个三角形。&lt;/p&gt;
+
+&lt;p&gt;第1个三角形使用了相对定位，第2个三角形使用了绝对定位，使得第2个三角形能够紧挨着第1个三角形。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.double-arrow&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	position: relative;
+	margin: 50px auto;
+	width: 0;
+	border: 20px solid transparent;
+	border-left: 20px solid &lt;span class=&quot;c&quot;&gt;#A30BE8;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+.double-arrow::after&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	content: &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;;
+	position: absolute;
+	left: 100%;
+	top: -20px;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-left: 20px solid &lt;span class=&quot;c&quot;&gt;#A30BE8;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&amp;lt;div &lt;span class=&quot;nv&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;double-arrow&quot;&lt;/span&gt;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;气泡&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/css/bubble.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;气泡是我们常见的一种图案，它是由一个三角形和一个长方形组成的。&lt;/p&gt;
+
+&lt;p&gt;由于三角形是放在长方形前面的，所以我们使用:before伪类，并设置绝对定位。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.bubble&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	position: relative;
+	margin: 50px auto;
+	font-size: 2rem;
+	color: &lt;span class=&quot;c&quot;&gt;#fff;&lt;/span&gt;
+	background-color: &lt;span class=&quot;c&quot;&gt;#5295E3;&lt;/span&gt;
+	width: 10rem;
+	height: 3rem;
+	text-align: center;
+	line-height: 3rem;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+.bubble::before&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	content: &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;;
+	position: absolute;
+	right: 100%;
+	top: 0.5rem;
+	width: 0;
+	border: 1rem solid transparent;
+	border-right: 1rem solid &lt;span class=&quot;c&quot;&gt;#5295E3;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&amp;lt;div &lt;span class=&quot;nv&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;bubble&quot;&lt;/span&gt;&amp;gt;
+	&amp;lt;span&amp;gt;立即查看&amp;lt;/span&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;丝带&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/blog/css/ribbon.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;丝带的实现则稍微复杂一些，不过我们可以将它拆分成3个部分：&lt;/p&gt;
+
+&lt;p&gt;1.一个显示文字的长方形&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div &lt;span class=&quot;nv&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ribbon&quot;&lt;/span&gt;&amp;gt;
+	&amp;lt;span&amp;gt;金卡会员&amp;lt;/span&amp;gt;
+&amp;lt;/div&amp;gt;
+.ribbon&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	position: relative;
+	margin: 50px auto;
+	font-size: 2rem;
+	color: &lt;span class=&quot;c&quot;&gt;#fff;&lt;/span&gt;
+	background-color: &lt;span class=&quot;c&quot;&gt;#ff0066;&lt;/span&gt;
+	width: 10rem;
+	height: 3rem;
+	text-align: center;
+	line-height: 3rem;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;2.左右两侧的耳朵（被啃了一口的长方形）&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.ribbon::before&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	content: &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;;
+	position: absolute;
+	z-index: -1;
+	right: 95%;
+	top: 0.5rem;
+	border: 1.5rem solid &lt;span class=&quot;c&quot;&gt;#ff0066;&lt;/span&gt;
+	border-left: 1.5rem solid transparent;
+	box-shadow: 0 1px 0 rgba&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;176, 102, 166, 0.8&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+.ribbon::after&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	content: &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;;
+	position: absolute;
+	z-index: -1;
+	left: 95%;
+	top: 0.5rem;
+	border: 1.5rem solid &lt;span class=&quot;c&quot;&gt;#ff0066;&lt;/span&gt;
+	border-right: 1.5rem solid transparent;
+	box-shadow: 0 1px 0 rgba&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;176, 102, 166, 0.8&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;3.在下方用于显示阴影的两个小三角形&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.ribbon span::before&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	content: &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;;
+	position: absolute;
+	left: 0;
+	top: 3rem;
+	border: 0.5rem solid transparent;
+	border-top: 0.5rem solid &lt;span class=&quot;c&quot;&gt;#bf004c;&lt;/span&gt;
+	border-width: 0.5rem 0 0 0.5rem;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+.ribbon span::after&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	content: &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;;
+	position: absolute;
+	right: 0;
+	top: 3rem;
+	border: 0.5rem solid transparent;
+	border-top: 0.5rem solid &lt;span class=&quot;c&quot;&gt;#bf004c;&lt;/span&gt;
+	border-width: 0.5rem;
+	border-width: 0.5rem 0.5rem 0 0;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name>Doctorma</name></author><category term="css" /><category term="三角形" /><summary>利用css完成一些三角形的页面元素的制作。</summary></entry><entry><title>vertical-align的理解</title><link href="https://doctorma.github.io/2016/08/07/verticalAlign.html" rel="alternate" type="text/html" title="vertical-align的理解" /><published>2016-08-07T00:00:00+08:00</published><updated>2016-08-07T00:00:00+08:00</updated><id>https://doctorma.github.io/2016/08/07/verticalAlign</id><content type="html" xml:base="https://doctorma.github.io/2016/08/07/verticalAlign.html">&lt;p&gt;vertical-align，垂直对齐。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;条件&lt;/h1&gt;
+
+&lt;p&gt;只有一个元素属于inline或是inline-block（table-cell也可以理解为inline-block水平）水平，其身上的vertical-align属性才会起作用。所以，类似下面的代码就不会起作用：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;div&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;vertical-align:middle;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;用法&lt;/h1&gt;
+
+&lt;p&gt;W3C上对vertical-align的定义：vertical-align 属性设置元素的垂直对齐方式。该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐。允许指定负长度值和百分比值。这会使元素降低而不是升高。在表单元格中，这个属性会设置单元格框中的单元格内容的对齐方式。&lt;/p&gt;
+
+&lt;p&gt;有两种用法：&lt;/p&gt;
+
+&lt;p&gt;第一种用法，后面一句“在表单元格中，这个属性会设置单元格框中的单元格内容的对齐方式。”如果给一个表格的td加一个vertical-align:middle的样式，表格里面的内容会垂直居中，同样的如果给一个vertical-align:bottom就会底部对齐，如果给一个vertical-align:top就会顶部对齐。&lt;/p&gt;
+
+&lt;p&gt;第二种用法，前一句“该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐。”打个比喻：假设有两个行内元素a和b，a和b都是img，当a加了一个vertical-align:middle样式之后，b的底部（基线）就会对齐a的中间位置，如下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic002.cnblogs.com/images/2012/214152/2012032120552273.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果a和b都加了一个vertical-align:middle样式，那么就互相对齐了对方的中间位置，也就是它们在垂直方向上的中线对齐了，如下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic002.cnblogs.com/images/2012/214152/2012032120584288.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;图片居中&lt;/h1&gt;
+
+&lt;p&gt;在div里面加一个span空标签，把它的高度设为100%，再给它一个vertical-align:middle样式，同样地给img一个vertical-align:middle样式，那么img就可以在div里面垂直居中了。如图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pic002.cnblogs.com/images/2012/214152/2012032121121823.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;参考文章：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/wyzlwyzl/article/details/17734077&quot;&gt;vertical-align&lt;/a&gt;&lt;/p&gt;</content><author><name>Doctorma</name></author><category term="vertical-align" /><summary>vertical-align，垂直对齐。</summary></entry><entry><title>正则表达式基本语法</title><link href="https://doctorma.github.io/2016/08/03/regexp.html" rel="alternate" type="text/html" title="正则表达式基本语法" /><published>2016-08-03T00:00:00+08:00</published><updated>2016-08-03T00:00:00+08:00</updated><id>https://doctorma.github.io/2016/08/03/regexp</id><content type="html" xml:base="https://doctorma.github.io/2016/08/03/regexp.html">&lt;p&gt;正则表达式是进行文本匹配的工具，是记录文本规则的字符串。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;字符&lt;/h1&gt;
+
+&lt;p&gt;包括只能匹配自身的普通字符及一些特殊字符（元字符）。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;^和$&lt;/h3&gt;
+
+&lt;p&gt;^匹配字符串的开始；$匹配字符串的结束；&lt;/p&gt;
+
+&lt;p&gt;例如一个网站如果要求填写的QQ号必须为5位到12位数字时，可以使用：^\d{5,12}$，保证整个字符串就是5到12位数字。&lt;/p&gt;
+
+&lt;p&gt;而只用\d{5,12}的话，只能保证字符串里包含5到12连续位数字。&lt;/p&gt;
+
+&lt;h3 id=&quot;b&quot;&gt;\b&lt;/h3&gt;
+
+&lt;p&gt;匹配单词的开始或结束；&lt;/p&gt;
+
+&lt;p&gt;代表着单词的开头或结尾，也就是单词的分界处。虽然通常英文的单词是由空格，标点符号或者换行来分隔的，但是\b并不匹配这些单词分隔字符中的任何一个，它只匹配一个位置。&lt;/p&gt;
+
+&lt;p&gt;例如：假设在一篇文章里查找hi，可以使用正则表达式hi。它可以精确匹配这样的字符串：由两个字符组成，前一个字符是h,后一个是i。不幸的是，很多单词里包含hi这两个连续的字符，比如him,history,high等等。用hi来查找的话，这里边的hi也会被找出来。如果要精确地查找hi这个单词的 话，我们应该使用\bhi\b。&lt;/p&gt;
+
+&lt;h3 id=&quot;w&quot;&gt;\w&lt;/h3&gt;
+
+&lt;p&gt;匹配字母，数字或下划线字符；&lt;/p&gt;
+
+&lt;h3 id=&quot;d&quot;&gt;\d&lt;/h3&gt;
+
+&lt;p&gt;匹配数字；&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;.&lt;/h3&gt;
+
+&lt;p&gt;匹配除了换行符以外的任意字符；&lt;/p&gt;
+
+&lt;h3 id=&quot;s&quot;&gt;\s&lt;/h3&gt;
+
+&lt;p&gt;匹配任意的空白符，包括空格，制表符(Tab)，换行符，中文全角空格等&lt;/p&gt;</content><author><name>Doctorma</name></author><category term="正则表达式" /><category term="regexp" /><summary>正则表达式是进行文本匹配的工具，是记录文本规则的字符串。</summary></entry><entry><title>DOM事件流机制</title><link href="https://doctorma.github.io/2016/07/09/eventflow.html" rel="alternate" type="text/html" title="DOM事件流机制" /><published>2016-07-09T00:00:00+08:00</published><updated>2016-07-09T00:00:00+08:00</updated><id>https://doctorma.github.io/2016/07/09/eventflow</id><content type="html" xml:base="https://doctorma.github.io/2016/07/09/eventflow.html">&lt;p&gt;DOM2中规定事件流包括三个部分：事件捕获阶段(Capturing)，处于目标阶段(target)，事件冒泡阶段(Bubbling)。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1816760-fb05eb8345bbb440.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;Event&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;事件捕获&lt;/h1&gt;
+
+&lt;p&gt;事件捕获，是从document元素开始，自上而下接收事件的过程。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;常见的坑：新插入的子元素没有绑定click事件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;ul &lt;span class=&quot;nv&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;container&quot;&lt;/span&gt;&amp;gt;
+	&amp;lt;li &lt;span class=&quot;nv&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;item&quot;&lt;/span&gt;&amp;gt;111&amp;lt;/li&amp;gt;
+	&amp;lt;li &lt;span class=&quot;nv&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;item&quot;&lt;/span&gt;&amp;gt;222&amp;lt;/li&amp;gt;
+	&amp;lt;li &lt;span class=&quot;nv&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;item&quot;&lt;/span&gt;&amp;gt;333&amp;lt;/li&amp;gt;
+	&amp;lt;li &lt;span class=&quot;nv&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;item&quot;&lt;/span&gt;&amp;gt;444&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;ul元素初始状态时包含4个li元素，循环为li元素添加click事件。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;var i &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 0; i &amp;lt; oli.length; i++&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	oli[i].addEventListener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;,function&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+		alert&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ok&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;;
+	&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;坑在于，新添加的li元素不会有绑定的click事件。&lt;/p&gt;
+
+&lt;p&gt;解决方法：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//给父元素添加事件监听器
+oul.addEventListener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;,function&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+	//判断被点击的元素是否为目标元素
+	var target &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; e.target;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;target.className &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;item&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+		alert&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ok&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;		
+&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;上面的方法就是&lt;strong&gt;事件委托&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;事件冒泡&lt;/h1&gt;
+
+&lt;p&gt;事件冒泡，是从底层的目标元素开始，自下而上接收传递事件的过程。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;常见的坑：父元素和子元素同时绑定click事件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;ul &lt;span class=&quot;nv&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;container&quot;&lt;/span&gt;&amp;gt;
+    &amp;lt;li &lt;span class=&quot;nv&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;item&quot;&lt;/span&gt;&amp;gt;click&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+//--------
+oli.addEventListener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;,function&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+	alert&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;li&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;;	
+&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;;
+oul.addEventListener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;,function&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+	alert&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ul&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;;	
+&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;例如ul是父元素，li是内部的子元素，两个绑定了不同的click事件。&lt;/p&gt;
+
+&lt;p&gt;坑在于，点击li时也会触发ul的click事件。&lt;/p&gt;
+
+&lt;p&gt;解决方法，阻止事件冒泡：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;oli.addEventListener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;,function&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+	alert&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;li&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;;	
+	e.stopPropagation&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;;
+&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;;
+oul.addEventListener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;,function&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+	alert&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ul&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;;	
+&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;并非所有的事件都会经过冒泡阶段&lt;/h1&gt;
+&lt;p&gt;所有的事件都要经过捕捉阶段和目标阶段，但是有些事件会跳过冒泡阶段。例如:&lt;/p&gt;
+
+&lt;p&gt;blur: 在元素失去焦点时触发，该事件不支持冒泡&lt;/p&gt;
+
+&lt;p&gt;focus: 在元素获得焦点时触发，该事件不支持冒泡&lt;/p&gt;
+
+&lt;p&gt;mouseenter: 当鼠标移入元素时触发，该事件不支持冒泡&lt;/p&gt;
+
+&lt;p&gt;mouseleave: 当鼠标移出元素时触发，该事件不支持冒泡&lt;/p&gt;
+
+&lt;p&gt;…&lt;/p&gt;</content><author><name>Doctorma</name></author><category term="javascript" /><category term="事件流" /><category term="DOM" /><summary>DOM2中规定事件流包括三个部分：事件捕获阶段(Capturing)，处于目标阶段(target)，事件冒泡阶段(Bubbling)。</summary></entry><entry><title>git远程操作</title><link href="https://doctorma.github.io/2016/07/05/git-Github.html" rel="alternate" type="text/html" title="git远程操作" /><published>2016-07-05T00:00:00+08:00</published><updated>2016-07-05T00:00:00+08:00</updated><id>https://doctorma.github.io/2016/07/05/git-Github</id><content type="html" xml:base="https://doctorma.github.io/2016/07/05/git-Github.html">&lt;p&gt;git是目前最流行的版本管理系统。&lt;/p&gt;
 
 &lt;p&gt;本文将详细介绍5个Git命令。&lt;/p&gt;
 

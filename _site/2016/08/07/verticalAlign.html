@@ -5,20 +5,20 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="git,Github">
+<meta name="keywords" content="vertical-align">
 
 <meta name="google-site-verification" content="eLkhUhgjmoDvyZ3RB9Co10qQdgK2T0Jgc49Z90sjjRw" />
 
 <!-- Begin Jekyll SEO tag v2.0.0 -->
-<title>git远程操作 - Doctorma Land</title>
-<meta property="og:title" content="git远程操作" />
-<meta name="description" content="git是目前最流行的版本管理系统。本文将详细介绍5个Git命令。" />
-<meta property="og:description" content="git是目前最流行的版本管理系统。本文将详细介绍5个Git命令。" />
-<link rel="canonical" href="https://doctorma.github.io/2016/07/05/git-Github.html" />
-<meta property="og:url" content="https://doctorma.github.io/2016/07/05/git-Github.html" />
+<title>vertical-align的理解 - Doctorma Land</title>
+<meta property="og:title" content="vertical-align的理解" />
+<meta name="description" content="vertical-align，垂直对齐。" />
+<meta property="og:description" content="vertical-align，垂直对齐。" />
+<link rel="canonical" href="https://doctorma.github.io/2016/08/07/verticalAlign.html" />
+<meta property="og:url" content="https://doctorma.github.io/2016/08/07/verticalAlign.html" />
 <meta property="og:site_name" content="Doctorma Land" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-07-05T00:00:00+08:00" />
+<meta property="article:published_time" content="2016-08-07T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@harttleharttle" />
 <meta name="twitter:creator" content="@Doctorma" />
@@ -26,11 +26,11 @@
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "git远程操作",
-    "datePublished": "2016-07-05T00:00:00+08:00",
-    "description": "git是目前最流行的版本管理系统。本文将详细介绍5个Git命令。",
+    "headline": "vertical-align的理解",
+    "datePublished": "2016-08-07T00:00:00+08:00",
+    "description": "vertical-align，垂直对齐。",
     "logo": "https://doctorma.github.ioassets/img/favicon.png",
-    "url": "https://doctorma.github.io/2016/07/05/git-Github.html"
+    "url": "https://doctorma.github.io/2016/08/07/verticalAlign.html"
   }
 </script>
 <!-- End Jekyll SEO tag -->
@@ -68,12 +68,12 @@
     <div class="container-fluid">
       <time class="pull-right">
         
-        Tuesday, July 
-        5th
+        Sunday, August 
+        7th
           , 
         2016
       </time>
-      <h3>git远程操作
+      <h3>vertical-align的理解
         
       </h3>
 
@@ -81,9 +81,7 @@
 
       <p class="tag-list">
         
-          <a class="tag" href="/tags.html#git">git</a>
-        
-          <a class="tag" href="/tags.html#Github">Github</a>
+          <a class="tag" href="/tags.html#vertical-align">vertical-align</a>
         
       </p>
     </div>
@@ -92,58 +90,43 @@
   <div class="container-fluid">
     <div class="content">
       <article class="md">
-        <p>git是目前最流行的版本管理系统。</p>
-
-<p>本文将详细介绍5个Git命令。</p>
+        <p>vertical-align，垂直对齐。</p>
 
 <!--more-->
 
-<p><img src="http://image.beekka.com/blog/2014/bg2014061202.jpg" alt="" /></p>
+<h1 id="section">条件</h1>
 
-<h1 id="git-clone">git clone</h1>
+<p>只有一个元素属于inline或是inline-block（table-cell也可以理解为inline-block水平）水平，其身上的vertical-align属性才会起作用。所以，类似下面的代码就不会起作用：</p>
 
-<p>从远程主机克隆一个版本库到本地</p>
-
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone &lt;版本库的网址&gt; &lt;本地目录名&gt;
-</code></pre>
-</div>
-<p>支持多种协议，包括HTTP(s)、SSH、Git、本地文件协议等。</p>
-
-<h1 id="git-remote">git remote</h1>
-
-<p>用于管理主机名。</p>
-
-<p><strong>git remote</strong>：列出所有远程主机。</p>
-
-<p><strong>git remote -v</strong>：可以参看远程主机的网址。</p>
-
-<p><strong>git remote add</strong>：用于添加远程主机。</p>
-
-<p><strong>git remote rm</strong>：用于删除远程主机。</p>
-
-<h1 id="git-fetch">git fetch</h1>
-
-<p>将远程主机版本库的更新（commit）取回本地。</p>
-
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git fetch &lt;远程主机名&gt;
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>div<span class="o">{</span>vertical-align:middle;<span class="o">}</span>
 </code></pre>
 </div>
 
-<h1 id="git-pull">git pull</h1>
+<h1 id="section-1">用法</h1>
 
-<p>取回远程主机某个分支的更新，再与本地的指定分支合并。</p>
+<p>W3C上对vertical-align的定义：vertical-align 属性设置元素的垂直对齐方式。该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐。允许指定负长度值和百分比值。这会使元素降低而不是升高。在表单元格中，这个属性会设置单元格框中的单元格内容的对齐方式。</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;
-</code></pre>
-</div>
+<p>有两种用法：</p>
 
-<h1 id="git-push">git push</h1>
+<p>第一种用法，后面一句“在表单元格中，这个属性会设置单元格框中的单元格内容的对齐方式。”如果给一个表格的td加一个vertical-align:middle的样式，表格里面的内容会垂直居中，同样的如果给一个vertical-align:bottom就会底部对齐，如果给一个vertical-align:top就会顶部对齐。</p>
 
-<p>用于将本地分支的更新，推送到远程主机。</p>
+<p>第二种用法，前一句“该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐。”打个比喻：假设有两个行内元素a和b，a和b都是img，当a加了一个vertical-align:middle样式之后，b的底部（基线）就会对齐a的中间位置，如下图：</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;
-</code></pre>
-</div>
+<p><img src="http://pic002.cnblogs.com/images/2012/214152/2012032120552273.png" alt="" /></p>
+
+<p>如果a和b都加了一个vertical-align:middle样式，那么就互相对齐了对方的中间位置，也就是它们在垂直方向上的中线对齐了，如下图：</p>
+
+<p><img src="http://pic002.cnblogs.com/images/2012/214152/2012032120584288.png" alt="" /></p>
+
+<h1 id="section-2">图片居中</h1>
+
+<p>在div里面加一个span空标签，把它的高度设为100%，再给它一个vertical-align:middle样式，同样地给img一个vertical-align:middle样式，那么img就可以在div里面垂直居中了。如图：</p>
+
+<p><img src="http://pic002.cnblogs.com/images/2012/214152/2012032121121823.png" alt="" /></p>
+
+<p>参考文章：</p>
+
+<p><a href="http://blog.csdn.net/wyzlwyzl/article/details/17734077">vertical-align</a></p>
 
 
       </article>
@@ -158,13 +141,13 @@
       </div>
       <div class="post-pager clearfix">
   
-    <a href="/2016/07/04/jekyll-git-markdown.html" class="previous btn-hover">
-      上一篇：使用jekyll+Github Pages+markdown本地写博客
+    <a href="/2016/08/03/regexp.html" class="previous btn-hover">
+      上一篇：正则表达式基本语法
     </a>
   
   
-    <a href="/2016/07/09/eventflow.html" class="next btn-hover">
-      下一篇：DOM事件流机制
+    <a href="/2016/08/08/css-triangle.html" class="next btn-hover">
+      下一篇：css的三角形运用
     </a>
   
 

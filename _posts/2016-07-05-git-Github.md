@@ -58,15 +58,3 @@ $ git push <远程主机名> <本地分支名>:<远程分支名>
 ```
 
 
-[ts]: https://en.wikipedia.org/wiki/Web_template_system
-[sl]: https://shopify.github.io/liquid/
-[liquid-node]: https://github.com/sirlantis/liquid-node
-[hsl]: https://github.com/harttle/shopify-liquid
-[dt]: https://docs.djangoproject.com/en/1.9/ref/templates/
-[cs]: https://en.wikipedia.org/wiki/CodeCharge_Studio
-[Thymeleaf]: https://en.wikipedia.org/wiki/Thymeleaf
-[hbs]: http://handlebarsjs.com/
-[ngt]: https://docs.angularjs.org/guide/templates
-[jade]: http://jade-lang.com/
-[ejs]: https://github.com/tj/ejs
-

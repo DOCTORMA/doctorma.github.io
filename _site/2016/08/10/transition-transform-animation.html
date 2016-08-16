@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="module-default">
+  <head> 
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="css3,transition,transform,animation">
+
+<meta name="google-site-verification" content="eLkhUhgjmoDvyZ3RB9Co10qQdgK2T0Jgc49Z90sjjRw" />
+
+<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>CSS3 Transition, Transform和Animation区别和使用 - Doctorma Land</title>
+<meta property="og:title" content="CSS3 Transition, Transform和Animation区别和使用" />
+<meta name="description" content="CSS3动画相关的几个属性是：transition, transform, animation。分别为过渡，变换，动画。" />
+<meta property="og:description" content="CSS3动画相关的几个属性是：transition, transform, animation。分别为过渡，变换，动画。" />
+<link rel="canonical" href="https://doctorma.github.io/2016/08/10/transition-transform-animation.html" />
+<meta property="og:url" content="https://doctorma.github.io/2016/08/10/transition-transform-animation.html" />
+<meta property="og:site_name" content="Doctorma Land" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-08-10T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@harttleharttle" />
+<meta name="twitter:creator" content="@Doctorma" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "CSS3 Transition, Transform和Animation区别和使用",
+    "datePublished": "2016-08-10T00:00:00+08:00",
+    "description": "CSS3动画相关的几个属性是：transition, transform, animation。分别为过渡，变换，动画。",
+    "logo": "https://doctorma.github.ioassets/img/favicon.png",
+    "url": "https://doctorma.github.io/2016/08/10/transition-transform-animation.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://doctorma.github.io/feed.xml" title="Doctorma Land" />
+
+<link rel="shortcut icon" href="/assets/img/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/img/apple-touch-icon-precomposed.png">
+<link rel="stylesheet" href="/assets/lib/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/lib/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" defer href="/assets/lib/lightbox/css/lightbox.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+
+<script src="/assets/lib/jquery/jquery-2.0.3.min.js"></script>
+
+ </head>
+  <body id="body" >
+
+    <div class="banner ">
+      <div class="container-fluid">
+        <nav class="pull-right">
+          <a class="glow no-decoration" href="/tags.html">标签</a>
+          <a class="glow no-decoration" href="/archive.html">归档</a>
+          <a class="glow no-decoration" href="/about.html">关于</a>
+        </nav>
+        <a class="logo no-decoration" href="/">
+          <!-- <i class="logo-h fa fa-h-square"></i>  -->
+          <span class="logo-arttle glow">Doctorma</span>
+          <span class="logo-land">Land</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="site-content"> <div class="module-blog">
+  <header class="blog-header">
+    <div class="container-fluid">
+      <time class="pull-right">
+        
+        Wednesday, August 
+        10th
+          , 
+        2016
+      </time>
+      <h3>CSS3 Transition, Transform和Animation区别和使用
+        
+      </h3>
+
+      <aside> <div class="toc"></div> </aside>
+
+      <p class="tag-list">
+        
+          <a class="tag" href="/tags.html#css3">css3</a>
+        
+          <a class="tag" href="/tags.html#transition">transition</a>
+        
+          <a class="tag" href="/tags.html#transform">transform</a>
+        
+          <a class="tag" href="/tags.html#animation">animation</a>
+        
+      </p>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+    <div class="content">
+      <article class="md">
+        <p>CSS3动画相关的几个属性是：transition, transform, animation。分别为过渡，变换，动画。</p>
+
+<!--more-->
+
+<h1 id="transition">transition</h1>
+
+<p>其作用是：在一定的时间内平滑的改变CSS的值。无论是点击事件，焦点事件，还是鼠标hover，只要值改变了，就是平滑的，就是动画。</p>
+
+<p>transition有下面些具体属性：</p>
+
+<p>transition-property :* //指定过渡的属性</p>
+
+<p>transition-duration:*//指定这个过渡的持续时间</p>
+
+<p>transition-timing-function:*//指定过渡类型</p>
+
+<p>transition-delay:* //延迟过渡时间</p>
+
+<h3 id="transition-property">transition-property</h3>
+
+<p>语法：</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>transition-property ： none | all | <span class="o">[</span> &lt;IDENT&gt; <span class="o">]</span> <span class="o">[</span> <span class="s1">','</span> &lt;IDENT&gt; <span class="o">]</span><span class="k">*</span>
+</code></pre>
+</div>
+
+<p>transition-property是用来指定当元素其中一个属性改变时执行transition效果，其主要有以下几个值：none(没有属性改变)；all（所有属性改变）这个也是其默认值；ident（元素属性名）。当其值为none时，transition马上停止执行，当指定为all时，则元素产生任何属性值变化时都将执行transition效果，ident是可以指定元素的某一个属性值。</p>
+
+<h3 id="transition-duration">transition-duration</h3>
+
+<p>语法：</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>transition-duration ： &lt;<span class="nb">time</span>&gt; <span class="o">[</span>, &lt;<span class="nb">time</span>&gt;]<span class="k">*</span> 
+</code></pre>
+</div>
+
+<p>transition-duration是用来指定元素转换过程的持续时间，取值：<time>为数值，单位为s（秒）或者ms(毫秒),可以作用于所有元素，包括::before和::after伪元素。其默认值是0，也就是变换时是即时的。</time></p>
+
+<h3 id="transition-timing-function">transition-timing-function</h3>
+
+<p>语法：</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>transition-timing-function ： ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier<span class="o">(</span>&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;number&gt;<span class="o">)</span> <span class="o">[</span>, ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier<span class="o">(</span>&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;number&gt;<span class="o">)]</span><span class="k">*</span> 
+</code></pre>
+</div>
+
+<p>transition-timing-function有6个可能值：</p>
+
+<p>1、ease：（逐渐变慢）默认值，ease函数等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0).</p>
+
+<p>2、linear：（匀速），linear 函数等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0).</p>
+
+<p>3、ease-in：(加速)，ease-in 函数等同于贝塞尔曲线(0.42, 0, 1.0, 1.0).</p>
+
+<p>4、ease-out：（减速），ease-out 函数等同于贝塞尔曲线(0, 0, 0.58, 1.0).</p>
+
+<p>5、ease-in-out：（加速然后减速），ease-in-out 函数等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)</p>
+
+<p>6、cubic-bezier：（该值允许你去自定义一个时间曲线）， 特定的cubic-bezier曲线。 (x1, y1, x2, y2)四个值特定于曲线上点P1和点P2。所有值需在[0, 1]区域内，否则无效。</p>
+
+<h3 id="transition-delay">transition-delay</h3>
+
+<p>语法：</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>transition-delay ： &lt;<span class="nb">time</span>&gt; <span class="o">[</span>, &lt;<span class="nb">time</span>&gt;]<span class="k">*</span> 
+</code></pre>
+</div>
+
+<p>transition-delay是用来指定一个动画开始执行的时间，也就是说当改变元素属性值后多长时间开始执行transition效果，其取值：<time>为数值，单位为s（秒）或者ms(毫秒)，也可以作用于所有元素，包括:before和:after伪元素。 默认大小是"0"，也就是变换立即执行，没有延迟。</time></p>
+
+<p>综合上述我们可以给transition一个速记法：transition: <property> <duration> <animation type=""> <delay>.</delay></animation></duration></property></p>
+
+<h1 id="transform">transform</h1>
+
+<p>transform指变换，主要包括以下几种：旋转rotate、扭曲skew、缩放scale和移动translate以及矩阵变形matrix。</p>
+
+<p>语法：</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>transform ： none | &lt;transform-function&gt; <span class="o">[</span> &lt;transform-function&gt; <span class="o">]</span><span class="k">*</span> 
+也就是：
+transform :  rotate | scale | skew | translate |matrix;
+</code></pre>
+</div>
+
+<p>none:表示不进行变换；<transform-function>表示一个或多个变换函数，以空格分开。</transform-function></p>
+
+<h3 id="rotate">旋转rotate</h3>
+
+<p>rotate(<angle>) ：通过指定的角度参数对原元素指定一个2D rotation（2D 旋转），需先有transform-origin属性的定义。transform-origin定义的是旋转的基点，其中angle是指旋转角度，如果设置的值为正数表示顺时针旋转，如果设置的值为负数，则表示逆时针旋转。如：transform:rotate(30deg)。</angle></p>
+
+<h3 id="translate">移动translate</h3>
+
+<p>移动translate我们分为三种情况：translate(x,y)水平方向和垂直方向同时移动（也就是X轴和Y轴同时移动）；translateX(x)仅水平方向移动（X轴移动）；translateY(Y)仅垂直方向移动（Y轴移动）。其基点默认为元素中心点，也可以根据transform-origin进行改变基点。</p>
+
+<h3 id="scale">缩放scale</h3>
+
+<p>缩放scale和移动translate是极其相似，也具有三种情况：scale(x,y)使元素水平方向和垂直方向同时缩放（也就是X轴和Y轴同时缩放）；scaleX(x)元素仅水平方向缩放（X轴缩放）；scaleY(y)元素仅垂直方向缩放（Y轴缩放），但它们具有相同的缩放中心点和基数，其中心点就是元素的中心位置，缩放基数为1，如果其值大于1元素就放大，反之其值小于1，元素缩小。</p>
+
+<h3 id="skew">扭曲skew</h3>
+
+<p>扭曲skew和translate、scale一样同样具有三种情况：skew(x,y)使元素在水平和垂直方向同时扭曲（X轴和Y轴同时按一定的角度值进行扭曲变形）；skewX(x)仅使元素在水平方向扭曲变形（X轴扭曲变形）；skewY(y)仅使元素在垂直方向扭曲变形（Y轴扭曲变形）。</p>
+
+<h3 id="matrix">矩阵matrix</h3>
+
+<p>matrix(<number>, <number>, <number>, <number>, <number>, <number>) ： 以一个含六值的(a,b,c,d,e,f)变换矩阵的形式指定一个2D变换，相当于直接应用一个[a b c d e f]变换矩阵。就是基于水平方向（X轴）和垂直方向（Y轴）重新定位元素。</number></number></number></number></number></number></p>
+
+<h1 id="animation">animation</h1>
+
+<p>Animation，也就是动画。但CSS3中的Animation与HTML5中的Canvas绘制动画又不同，Animation只应用在页面上已存在的DOM元素上。</p>
+
+<h3 id="keyframes">Keyframes</h3>
+
+<p>关键帧，前面在使用transition制作一个简单的transition效果时，我们包括了初始属性和最终属性，一个开始执行动作时间和一个延续动作时间以及动作的变换速率，其实这些值都是一个中间值，如果我们要控制的更细一些，比如说我要第一个时间段执行什么动作，第二个时间段执行什么动作（换到flash中说，就是第一帧我要执行什么动作，第二帧我要执行什么动作），这样我们用Transition就很难实现了，此时我们也需要这样的一个“关键帧”来控制。那么CSS3的Animation就是由“keyframes”这个属性来实现这样的效果。</p>
+
+<p>语法：</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>keyframes-rule: <span class="s1">'@keyframes'</span> IDENT <span class="s1">'{'</span> keyframes-blocks <span class="s1">'}'</span>;
+keyframes-blocks: <span class="o">[</span> keyframe-selectors block <span class="o">]</span><span class="k">*</span> ;
+keyframe-selectors: <span class="o">[</span> <span class="s1">'from'</span> | <span class="s1">'to'</span> | PERCENTAGE <span class="o">]</span> <span class="o">[</span> <span class="s1">','</span> <span class="o">[</span> <span class="s1">'from'</span> | <span class="s1">'to'</span> | PERCENTAGE <span class="o">]</span> <span class="o">]</span><span class="k">*</span>;
+</code></pre>
+</div>
+
+<p>Keyframes具有其自己的语法规则，他的命名是由”@keyframes”开头，后面紧接着是这个“动画的名称IDENT”加上一对花括号“{}”，括号中就是一些不同时间段样式规则，有点像我们css的样式写法一样。对于一个”@keyframes”中的样式规则是由多个百分比构成的，如“0%”到”100%”之间，我们可以在这个规则中创建多个百分比，我们分别给每一个百分比中给需要有动画效果的元素加上不同的属性，从而让元素达到一种在不断变化的效果，比如说移动，改变元素颜色，位置，大小，形状等，不过有一点需要注意的是，我们可以使用“from”“to”来代表一个动画是从哪开始，到哪结束，也就是说这个 “from”就相当于”0%”而”to”相当于”100%”,值得一说的是，其中”0%”不能像别的属性取值一样把百分比符号省略，我们在这里必须加上百分符号（“%”）如果没有加上的话，我们这个keyframes是无效的，不起任何作用。因为keyframes的单位只接受百分比值。综上：</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>@keyframes IDENT <span class="o">{</span>
+ from <span class="o">{</span>
+   Properties:Properties value;
+ <span class="o">}</span>
+ Percentage <span class="o">{</span>
+   Properties:Properties value;
+ <span class="o">}</span>
+ to <span class="o">{</span>
+   Properties:Properties value;
+ <span class="o">}</span>
+<span class="o">}</span>
+或者全部写成百分比的形式：
+@keyframes IDENT <span class="o">{</span>
+  0% <span class="o">{</span>
+     Properties:Properties value;
+  <span class="o">}</span>
+  Percentage <span class="o">{</span>
+     Properties:Properties value;
+  <span class="o">}</span>
+  100% <span class="o">{</span>
+     Properties:Properties value;
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="animation-1">元素怎么调用animation属性</h3>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>.demo1 <span class="o">{</span>
+ width: 50px;
+ height: 50px;
+ margin-left: 100px;
+ background: blue;
+ -webkit-animation-name:<span class="s1">'wobble'</span>;/<span class="k">*</span>动画属性名，也就是我们前面keyframes定义的动画名<span class="k">*</span>/
+ -webkit-animation-duration: 10s;/<span class="k">*</span>动画持续时间<span class="k">*</span>/
+ -webkit-animation-timing-function: ease-in-out; /<span class="k">*</span>动画频率，和transition-timing-function是一样的<span class="k">*</span>/
+ -webkit-animation-delay: 2s;/<span class="k">*</span>动画延迟时间<span class="k">*</span>/
+ -webkit-animation-iteration-count: 10;/<span class="k">*</span>定义循环次数，默认为1，infinite为无限次<span class="k">*</span>/
+ -webkit-animation-direction: alternate;/<span class="k">*</span>定义动画播放的方式，其只有两个值，默认值为normal，如果设置为normal时，动画的每次循环都是向前播放；另一个值是alternate，他的作用是，动画播放在第偶数次向前播放，第奇数次向反方向播放。<span class="k">*</span>/
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>综合上面的内容可以给animation属性一个速记法：</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">animation:[&lt;animation-name&gt; </span><span class="o">||</span> &lt;animation-duration&gt; <span class="o">||</span> &lt;animation-timing-function&gt; <span class="o">||</span> &lt;animation-delay&gt; <span class="o">||</span> &lt;animation-iteration-count&gt; <span class="o">||</span> &lt;animation-direction&gt;] <span class="o">[</span>, <span class="o">[</span>&lt;animation-name&gt; <span class="o">||</span> &lt;animation-duration&gt; <span class="o">||</span> &lt;animation-timing-function&gt; <span class="o">||</span> &lt;animation-delay&gt; <span class="o">||</span> &lt;animation-iteration-count&gt; <span class="o">||</span> &lt;animation-direction&gt;] <span class="o">]</span><span class="k">*</span> 
+</code></pre>
+</div>
+
+<p>参考文章：</p>
+
+<p><a href="http://www.w3cplus.com/content/css3-transition">transition</a></p>
+
+<p><a href="http://www.w3cplus.com/content/css3-transform">transform</a></p>
+
+<p><a href="http://www.w3cplus.com/content/css3-animation">animation</a></p>
+
+      </article>
+
+      <div class="author-wrapper">
+        <section class="module-author">
+  <img src="/assets/img/avatar.jpg">
+  <header>Doctorma</header>
+  <p>前端开发</p>
+</section>
+
+      </div>
+      <div class="post-pager clearfix">
+  
+    <a href="/2016/08/08/css-triangle.html" class="previous btn-hover">
+      上一篇：css的三角形运用
+    </a>
+  
+  
+    <a href="/2016/08/14/flex.html" class="next btn-hover">
+      下一篇：CSS3 Flexbox布局
+    </a>
+  
+
+  
+
+  
+
+  
+    <div id="social-share-block" class="text-center"></div>
+  
+
+</div>
+
+
+      <!-- <div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'harttleland'; 
+  $(function () {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  });
+</script>
+<noscript>请 <a href="http://disqus.com/?ref_noscript">启用 JavaScript</a> 来查看评论 </noscript>
+ -->
+    </div>
+  </div>
+
+  <script type="text/x-mathjax-config">  
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$', '$'] ],
+            displayMath: [ ['$$', '$$'], ['$$$', '$$$']],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+    MathJax.Hub.Queue(function () {
+        $('body').scrollspy('refresh'); 
+    });
+</script>
+
+<script type="text/async-script" data-src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+
+</div>
+
+ </div>
+
+    <a href="#body" id="site-scroll-top" class="animate">
+      <span class="fa fa-chevron-up"></span>
+    </a>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/libs/html5shiv/3.6.2/html5shiv.js"></script>
+<script src="//v3.bootcss.com/docs-assets/js/respond.min.js"></script>
+<![endif]-->
+
+<script src="/assets/lib/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/async-script" data-src="/assets/lib/lightbox/js/lightbox.min.js"></script>
+<script src="/assets/js/site.js"></script>
+
+<script>
+  var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "//hm.baidu.com/hm.js?d6a11a278b8e06d897d247e0402b0f35"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })();
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-65795020-1', 'auto'); ga('send', 'pageview');
+</script>
+
+<script>
+(function(){ var bp = document.createElement('script'); var curProtocol = window.location.protocol.split(':')[0]; if (curProtocol === 'https') { bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        } else { bp.src = 'http://push.zhanzhang.baidu.com/push.js'; } var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(bp, s); })();
+</script>
+
+
+  </body>
+</html>
